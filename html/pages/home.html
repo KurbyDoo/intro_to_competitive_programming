@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link href='https://fonts.googleapis.com/css?family=Noto%20Sans' rel='stylesheet'>
+    <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+<nav id="navbar">
+    <!-- Imported from nav.html -->
+</nav>
+<div class="wrapper">
+<div class="section light_blue">
+    <div class="align_left">
+        <div class="horizontal_alignment">
+            <div>
+                <h1>Intro to competitive programming</h1>
+                <p>
+                </p>
+            </div>
+            <div class="image">
+                <img class="image" src="https://media.gcflearnfree.org/content/5e31ca08bc7eff08e4063776_01_29_2020/ProgrammingIllustration.png" alt="computer">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="section pure_white">
+    <div class="horizontal_alignment">
+        <div class="image">
+            <img src="https://www.nicepng.com/png/full/181-1816226_blue-question-mark-clipart-question-mark-icon-blue.png" alt="question mark">
+        </div>
+        <div class="align_right">
+            <div>
+                <h2>What is competitive programming?</h2>
+                <p class="info_paragraph">
+                    Competitive programming involves solving a series problems using code faster than other people. But there is more to it than coding.
+                    Programmers use their vast knowledge of algorithms and data structures along with their logistical and critical thinking skills
+                    to solve the given problems with the most optical solutions.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="align_left">
+        <div class="horizontal_alignment">
+            <div>
+                <h3>Big O of n Notation</h3>
+                <p class="info_paragraph">
+                    Machines around the world vary in speed and power, one computer might be able to process a million operations 
+                    within milliseconds whereas another might take a minute. In order to standardize measuring a programs speed,
+                    programmers use a system called big O of n notation O(n). This system compares the input size relative to the number of steps taken
+                    to complete. This is known as a programs time complexity.
+                </p>
+            </div>
+            <div class="image">
+                <img class="image" src="https://devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/original/4X/f/9/3/f938d8c41af49f1a6c5a2a1ce63c30bbffe68b6d.jpeg"
+                alt="o_of_n_notation">
+            </div>
+        </div>
+    </div>
+    <div class="align_right">
+        <div class="horizontal_alignment">
+            <div class="image">
+                <img class="image large"
+                src="https://www.dqglobal.com/wp-content/uploads/2019/09/effective--1100x778.jpg"
+                alt="o_of_n_notation">
+            </div>
+            <div>
+                <h3>Finding efficient solutions</h3>
+                <p class="info_paragraph">
+                    When writing programs to solve problems, 
+                    programmers take into consideration what algorithms and data structures to use
+                    based on their time complexities for certain actions.
+                    With an effective way to measure the speed, programmers are then able to determine
+                    whether a program is fast enough to pass a problem.
+                    Although, the choice of what to use may not always be clear.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="section mid_blue">
+    <div class="align_right">
+        <div class="horizontal_alignment">
+            <div class="image">
+                <img class="image large"
+                src="https://cdn.pixabay.com/photo/2016/11/30/12/16/question-mark-1872665_960_720.jpg"
+                alt="question marks">
+            </div>
+            <div>
+                <h2>The Problem</h2>
+                <p class="info_paragraph">
+                    Imagine you are given a array of numbers and a target sum.
+                    Two numbers within the array are <strong>guaranteed</strong> to add up to the target sum without using the index twice.
+                    Write a program to output the indices of these two numbers in any order. <br>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="algin_left">
+        <h4>For Example:</h4>
+        <div class="horizontal_alignment">
+            <p class="info_paragraph">
+                A list of [2, 7, 11, 15] with a target of 9 would have an output of [0, 1] since the item at index 0 (2) 
+                and index 1 (7) add up to 9 (2 + 7 = 9) <br>
+            </p>
+            <p class="info_paragraph">
+                A list of [3,2,4] with a target of 6 would have an output of [1, 2] since the item at index 1 (2)
+                and index 2 (4) add up to 6 (2 + 4 = 6)
+            </p>
+        </div>
+    </div>
+    <div class="align_center">
+        <p class="info_paragraph">
+            Try this problem for yourself before reading the solution below.
+            You can find the problem <a class="problem" href="https://leetcode.com/problems/two-sum/">here</a>
+        </p>
+    </div>
+</div>
+<div class="section dark_blue">
+    <div class="align_right">
+        <h3>The Brute Force Approach</h3>
+        <p class="info_paragraph">
+            The first idea you might have is to compare every number to every other number until you find a sum that
+            reaches the target.
+        </p>
+    </div>
+    <div class="align_left">
+        <div class="horizontal_alignment">
+            <div>
+                <p class="info_paragraph">
+                This can be done with two loops looping through the list. The first loop starts at zero and goes through
+                every item: <br>
+                <span class="Python">for i in range(len(nums))</span>
+                <span class="Java">for (int i = 0; i &lt; nums.length; i++)</span>
+                <span class="C++">for (int i = 0; i &lt; nums.size(); i++)</span>
+                <br>
+                The second loop, starts at the first loops index + 1,and loops the rest of the numbers:
+                <span class="Python">for j in range(i + 1, len(nums))</span>
+                <span class="Java">for (int j = i + 1; j &lt; nums.length; j++)</span>
+                <span class="C++">for (int j = 0 + 1; j &lt; nums.size(); j++)</span>
+                <br>
+                By checking whether the two numbers are equal, we can determine the index of the two numbers:
+                <span class="Python">if nums[i] + nums[j] == target</span>
+                <span class="Java">if (nums[i] + nums[j] == target)</span>
+                <span class="C++">if(nums.at(i) + nums.at(j) == target)</span>
+            </p>
+            </div>
+            <div class="code_example">
+                <div class="tab">
+                    <button class="tab_links Python" onclick="selectLanguage('Python')" id="defaultOpen">
+                        Python
+                    </button>
+                    <button class="tab_links Java" onclick="selectLanguage('Java')">
+                        Java
+                    </button>
+                    <button class="tab_links C++" onclick="selectLanguage('C++')">
+                        C++
+                    </button>
+                </div>
+                
+                <div class="tab_content Python">
+                    <script src="https://gist.github.com/KurbyDoo/771b5d4399da01f7c4affd1e990e204e.js"></script>
+                </div>
+                
+                <div class="tab_content Java">
+                    <script src="https://gist.github.com/KurbyDoo/df67defa980066e7f1210cb60caf0fae.js"></script>
+                </div>
+                
+                <div class="tab_content C++">
+                    <script src="https://gist.github.com/KurbyDoo/d5e9619f1c5a5b9d140c758cbcbd8b1a.js"></script>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="align_right">
+        <p class="info_paragraph">
+            The brute force approach involves checking every possible combination numbers until you find the
+            solution.
+            Calculating the time complexity of this solution results in O(n^2).
+            This means as the input size gets larger, this program will take exponentially longer to run and output
+            the correct solution.
+        </p>
+    </div>
+</div>
+<div class="section navy_blue">
+    <div class="align_left">
+        <h3>The one pass approach</h3>
+        <p class="info_paragraph">
+            Since comparing every number with every other number is too slow, we need to find a solution that only requires checking each number once.
+            We can do this by using a map to store the previous checked numbers and their index as a key value pair.<br>
+            
+        </p>
+    </div>
+    <div class="align_right">
+        <div class="horizontal_alignment">
+            <div class="code_example">
+                <div class="tab">
+                    <button class="tab_links Python" onclick="selectLanguage('Python')">
+                        Python
+                    </button>
+                    <button class="tab_links Java" onclick="selectLanguage('Java')">
+                        Java
+                    </button>
+                    <button class="tab_links C++" onclick="selectLanguage('C++')">
+                        C++
+                    </button>
+                </div>
+            
+                <div class="tab_content Python">
+                    <script src="https://gist.github.com/KurbyDoo/87f27fe611d0f5b9e4458e6077db3344.js"></script>
+                </div>
+            
+                <div class="tab_content Java">
+                    <script src="https://gist.github.com/KurbyDoo/d074e0c32ee921a3a536c35c38e24fc1.js"></script>
+                </div>
+            
+                <div class="tab_content C++">
+                    <script src="https://gist.github.com/KurbyDoo/1415e5b6fecf24841b4c621bfd8a8928.js"></script>
+                </div>
+            </div>
+            <div>
+                <p class="info_paragraph">
+                    First we loop through the input array and check whether our number is stored in the map: <br>
+                    <span class="Python">for i, n in enumerate(nums): if n in checked:</span>
+                    <span class="Java">for(int i = 0; i &lt; nums.length; i++){ if(checked.containsKey(nums[i])){</span>
+                    <span class="C++">for (int i = 0; i &lt; nums.size(); i++){ if (checked.find(nums[i]) !=checked.end()){</span>
+                    <br>
+                    If our number is stored, we can return our current index and the index stored in the map:
+                    <span class="Python">return [checked[n], i]</span>
+                    <span class="Java">return new int[]{checked.get(nums[i]), i};</span>
+                    <span class="C++">res.push_back(checked[nums[i]]);</span>
+                    <span class="C++">res.push_back(i); </span>
+                    <span class="C++">return res;</span>
+                    <br>
+                    If we do not find our number within the map, we store our index using the number we need as the key:
+                    <span class="Python">checked[target - n] = i</span>
+                    <span class="Java">checked.put(target - nums[i], i);</span>
+                    <span class="C++">checked[target-nums[i]] = i;</span>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="align_left">
+        <p class="info_paragraph">
+            This approach is much more efficient, only requiring checking each number once.
+            Calculating the time complexity of this solution results in O(n).
+            This means our program speed will run linearly relative to the input size. 
+        </p>
+    </div>
+</div>
+<div id="footer">
+
+</div>
+</div>
+<script src="../../js/home.js"></script>
+<script src="../../js/load_nav.js"></script>
+</body>
+</html>
