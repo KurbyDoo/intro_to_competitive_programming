@@ -1,3 +1,3 @@
 window.addEventListener("load", () => {
-    window.open("../html/pages/home.html", "_self")
+    window.open("../pages/home.html", "_self")
 })
