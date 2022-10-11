@@ -131,7 +131,8 @@ span {
 
 .logo {
     width: 3rem;
-    background-color: wheat;
+    background-color: var(--white);
+    border-radius: 99em;
 }
 
 .section {
