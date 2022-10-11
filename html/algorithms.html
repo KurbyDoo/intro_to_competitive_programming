@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algorithms</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Noto%20Sans' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+    <nav id="navbar">
+    
+    </nav>
+    <div class="wrapper">
+        <div class="section align_left light_blue">
+            <div class="horizontal_alignment">
+                <div>
+                    <h1>An Intro to Algorithms</h1>
+                </div>
+                <div class="image">
+                    <img class="image" src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/Competitive-Programming-1.jpg" alt="algorithm">
+                </div>
+            </div>
+        </div>
+        <div class="section align_right pure_white">
+            <h2>What is an algorithm?</h2>
+            <div class="horizontal_alignment">
+                <div class="image">
+                    <img class="image" src="https://blog-c7ff.kxcdn.com/blog/wp-content/uploads/2019/11/Banner-Blog-1A-1.jpg" alt="algorithm">
+                </div>
+                <div>
+                    <p class="info_paragraph">
+                        An algorithm is defined a set or rules or instructions.
+                        In computer science, an algorithm is a finite sequence of instructions that a computer executes to perform a specific function.
+                        Algorithms can come in many different forms and complete many different tasks,
+                        from simple arithmetic to complex pathfinding, as long as a set of instructions is followed,
+                        it can be considered an algorithm.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="section align_left mid_blue">
+            <h3>What are some examples of algorithms?</h3>
+            <ul>
+                <li>
+                    <div class="horizontal_alignment">
+                        <div>
+                            <h3>Quick Sort</h3>
+                            <p class="info_paragraph">
+                                The quicksort algorithm is a fast sorting algorithm with a time complexity of O(n * log(n)).
+                                The algorithm works by choosing a partitions, then comparing the elements within that array to the partition. 
+                                If the chosen element is greater than the partition, place it to the right, if the element is smaller, place it to the left.
+                                With the smaller two unsorted sub arrays, repeat the steps above until the remaining sub arrays are of length 1. 
+                            </p>
+                        </div>
+                        <div class="image">
+                            <img class="image" src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Sorting_quicksort_anim.gif" alt="quicksort_gif">
+                        </div>
+                        <div class="image">
+                            <img class="image" src="https://miro.medium.com/max/729/1*JtbgCdukgXcCQS60H1a-aw.jpeg" alt="quicksort_visualization">
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="horizontal_alignment align_right wrap-reverse">
+                        <div class="image">
+                            <img class="image" src="https://www.guru99.com/images/1/020820_0543_BreadthFirs1.png" alt="bfs_visualization">
+                        </div>
+                        <div class="image">
+                            <img class="image" src="https://upload.wikimedia.org/wikipedia/commons/4/46/Animated_BFS.gif?20070330182553" alt="bfs_gif">
+                        </div>
+                        <div>
+                            <h3>Breadth First Search</h3>
+                            <p class="info_paragraph">
+                                Breadth first search is traversal algorithm allowing for the ability search through a given tree or graph.
+                                The algorithm searches layer by layer, traversing to a different depth at every step.
+                                Starting at an origin node, the algorithm checks all of that nodes neighbors.
+                                These new nodes's neighbors are then checked by the algorithm. This process continues until, all the nodes of a given graph or tree are checked.
+                                BFS is useful for finding the distance between two nodes in an unweighted directed or undirected graph.
+                            </p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="horizontal_alignment">
+                        <div>
+                            <h3>Binary Search</h3>
+                            <p class="info_paragraph">
+                                The binary search algorithm is an efficient way to search for a target value within a sorted list.
+                                To find a target item using this algorithm, you first select the center item of your sorted list as the value node to compare.
+                                Then you compare this item with your target, if your target is greater than the value node, the remaining to the right of the value node becomes the next sub array to check.
+                                Otherwise, the next sub array to check is left of the target.
+                                These steps are repeated with the remaining sub arrays until the target is found. 
+                            </p>
+                        </div>
+                        <div class="image">
+                            <img class="image" src="https://c.tenor.com/Jl0YrqxnHmAAAAAC/binary-search-sequence-search.gif" alt="binary_search_gif">
+                        </div>
+                        <div class="image">
+                            <img class="image" src="https://media.geeksforgeeks.org/wp-content/uploads/20220309171621/BinarySearch.png" alt="binary_search_visualization">
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="section align_right navy_blue">
+            <h1>Applying algorithms to problems</h1>
+            <p class="info_paragraph">
+                The following problems apply a variation of the algorithms mentioned above as an optimal solution.
+                Written solutions can be found in Python and in attached resources.
+            </p>
+            <div class="horizontal_alignment align_left">
+                <div>
+                    <h2>Quick Sort</h2>
+                    <ul class="problems_list">
+                        <li>
+                            <a class="problem" href="https://leetcode.com/problems/kth-largest-element-in-an-array/">Largest Kth Element In An Array</a>
+                            <p class="info_paragraph">Find the Kth largest element of an array, Quick Sort can be used to sort the array before finding the Kth largest element</p>
+                        </li>
+                        <li>
+                            <a class="problem" href="https://leetcode.com/problems/move-zeroes/">Move Zeros</a>
+                            <p class="info_paragraph">Move the zeros to the end of the given array without creating a new array, here the partition value can be set to any non zero element</p>
+                        </li>
+                        <li>
+                            <a href="https://leetcode.com/problems/sort-array-by-parity/" class="problem">Sort By Parity</a>
+                            <p class="info_paragraph">Sort the given array by even or odd, the partition here can be set to the a modulus of the current number then sorted left or right depending on even or odd</p>
+                        </li>
+                        <li>
+                            <a href="https://leetcode.com/problems/first-missing-positive/" class="problem">First Missing Positive (Hard)</a>
+                            <p class="info_paragraph">
+                                Find the lowest missing positive number, this problem must be solved in linear time and use constant space.
+                                Here quick sort can be used with the partition being the correct location of the item in the array.
+                                If the current item is positive and in the wrong location, swap it with the element at its correct location.
+                                Repeat until the array is sorted, then pass through the array until a missing positive integer is found.
+                            </p>
+                        </li>
+                        <li><a href="https://leetcode.com/discuss/general-discussion/1083445/how-quick-sort-works-and-the-problems-that-can-be-solved-using-partition-logic" class="problem info_paragraph">Full solutions and explanations can be found here</a></li>
+                    </ul>
+                </div>
+                <div class="image vertical_alignment">
+                    <div class="code_example">
+                        <div class="tab">
+                            <button class="tab_links solutions five six seven eight nine ten eleven" id="defaultOpen" onclick="selectSolution('solutions')">
+                                Solutions ->
+                            </button>
+                            <button class="tab_links one" onclick="selectSolution('one')">
+                                Largest Kth
+                            </button>
+                            <button class="tab_links two" onclick="selectSolution('two')">
+                                Move Zeros
+                            </button>
+                            <button class="tab_links three" onclick="selectSolution('three')">
+                                Sort By Parity
+                            </button>
+                            <button class="tab_links four" onclick="selectSolution('four')">
+                                First Missing Positive
+                            </button>
+                        </div>
+                        <div class="tab_content solutions five six seven eight nine ten eleven align_right">
+                            <h2 class="info_paragraph tab_description align_right">
+                                Python solutions can be found in the following tabs. Try attempting the problems before viewing the solutions
+                            </h2>
+                        </div>
+
+                        <div class="tab_content one">
+                            <script src="https://gist.github.com/KurbyDoo/3a8bcea035d3dda691aa26fa4ea91862.js"></script>
+                        </div>
+                        
+                        <div class="tab_content two">
+                            <script src="https://gist.github.com/KurbyDoo/102eee91306f0c6d2fc2e5d207041d60.js"></script>
+                        </div>
+                        
+                        <div class="tab_content three">
+                            <script src="https://gist.github.com/KurbyDoo/e47bc7fc34aebb857706ba4c11c540b3.js"></script>
+                        </div>
+                        <div class="tab_content four">
+                            <script src="https://gist.github.com/KurbyDoo/0eee14e00a556333859415f0eec566b7.js"></script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="horizontal_alignment align_right wrap-reverse">
+                <div class="image vertical_alignment">
+                    <div class="code_example">
+                        <div class="tab">
+                            <button class="tab_links solutions one two three four eight nine ten eleven" onclick="selectSolution('solutions')">
+                                Solutions ->
+                            </button>
+                            <button class="tab_links five" onclick="selectSolution('five')">
+                                Maximum Depth
+                            </button>
+                            <button class="tab_links six" onclick="selectSolution('six')">
+                                Bacteria Colony
+                            </button>
+                            <button class="tab_links seven" onclick="selectSolution('seven')">
+                                Word Ladder (Hard)
+                            </button>
+                        </div>
+                        <div class="tab_content solutions one two three four eight nine ten eleven">
+                            <h2 class="info_paragraph tab_description align_left">
+                                Python solutions can be found in the following tabs. Try attempting the problems before viewing the solutions
+                            </h2>
+                        </div>
+                
+                        <div class="tab_content five">
+                            <script src="https://gist.github.com/KurbyDoo/85b68254b0ae7be5e103a88690ea87b4.js"></script>
+                        </div>
+                
+                        <div class="tab_content six">
+                            <script src="https://gist.github.com/KurbyDoo/89a5eaa91dc101098f19e6f55e751712.js"></script>
+                        </div>
+                
+                        <div class="tab_content seven">
+                            <script src="https://gist.github.com/KurbyDoo/c26623fc16a33d97783c069e340055ea.js"></script>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h2>BFS</h2>
+                    <ul class="problems_list">
+                        <li>
+                            <a class="problem" href="https://leetcode.com/problems/maximum-depth-of-binary-tree/">Maximum Depth of Binary Tree</a>
+                            <p class="info_paragraph">
+                                Given a binary tree, return its maximum depth.
+                                Here BFS can be used to check through every item in the tree counting upwards
+                                the deeper it searches.
+                            </p>
+                        </li>
+                        <li>
+                            <a class="problem" href="https://tssoj.ca/problem/bacteriacolony">Bacteria Colony</a>
+                            <p class="info_paragraph">
+                                Given a 2d array of bacteria "*", find the number of colonies and return their size and the top left most point.
+                                This problem consists of two steps, finding colonies, then finding their size.
+                                We can find the top left corner of colonies by starting at (0, 0) and searching leftwards then downwards.
+                                If a colony is found, we can use BFS to find its size and track their occupied spaces.
+                            </p>
+                        </li>
+                        <li>
+                            <a href="https://leetcode.com/problems/word-ladder/" class="problem">Word Ladder (Hard)</a>
+                            <p class="info_paragraph">
+                                Given a starting word, ending word, and list of valid words.
+                                Find the minimum number of letter changes to valid words required to reach the target word.
+                                If no word is found, output 0.
+                                This problem uses BFS to search through a graph of nodes, where the value of a node is a word,
+                                and its edges are possible transformations.
+                                We can create a dictionary of the valid words possible states, and store the unmodified possible values at its value.
+                                We can use a placeholder letter value "*" to track changed words and compare it with our new modified words.
+                                Then we can check all modifications of the previous words possible values.
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="horizontal_alignment align_left">
+                <div>
+                    <h2>Binary Search</h2>
+                    <ul class="problems_list">
+                        <li>
+                            <a class="problem" href="https://leetcode.com/problems/binary-search/submissions/">
+                                Binary Search
+                            </a>
+                            <p class="info_paragraph">
+                                Locate the target item in a sorted array in O(log(n)) time. This question involves implementing a simple binary search.
+                                Use two variables as a low and high pointer, and change their location depending on the range of numbers being searched.
+                            </p>
+                        </li>
+                        <li>
+                            <a class="problem" href="https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/">
+                                First and last position of an element in a sorted array
+                            </a>
+                            <p class="info_paragraph">
+                                In a sorted array, locate the first and last index of a target number, if no number if found, output [-1, -1].
+                                This problem can be solved by including the partition value in the sub arrays.
+                                The first index found by including the partition value when it is greater than or equal to the target.
+                                The last index found by including the partition value when it is is less than or equal to the target.
+                            </p>
+                        </li>
+                        <li>
+                            <a href="https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/" class="problem">
+                                Capacity To Ship Packages Within D Days
+                            </a>
+                            <p class="info_paragraph">
+                                Given a list of weights and a target number of days.
+                                Find the minimum weight capacity of a ship to carry every weight in the target number of days.
+                                Here we can use binary search to find the optimal number of days required to ship every weight.
+                                First starting at the middle of the sum of every weight, and the weight of the largest element,
+                                we can check through every weight tracking the number of days required to ship with this maximum weight.
+                                If the number of days is to great, we can increase the maximum weight capacity.
+                                If the number of days is to little, we can decrease the maximum weight capacity.
+                            </p>
+                        </li>
+                        <li>
+                            <a href="https://leetcode.com/problems/count-of-smaller-numbers-after-self/" class="problem">
+                                Count of smaller numbers after self (Hard)
+                            </a>
+                            <p class="info_paragraph">
+                                Given an array of numbers, output the number of numbers smaller that appear after each item.
+                                To solve this problem, we can create a duplicate array of sorted numbers.
+                                Then we can loop through the original array and use binary search to find the location of each item within the sorted array.
+                                The index of this item, is then the number of smaller elements.
+                                We can then remove this element from the sorted array to prevent future searches from adding elements before itself.
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="image vertical_alignment">
+                    <div class="code_example">
+                        <div class="tab">
+                            <button class="tab_links solutions one two three four five six seven" onclick="selectSolution('solutions')">
+                                Solutions ->
+                            </button>
+                            <button class="tab_links eight" onclick="selectSolution('eight')">
+                                Binary Search
+                            </button>
+                            <button class="tab_links nine" onclick="selectSolution('nine')">
+                                First and Last Position
+                            </button>
+                            <button class="tab_links ten" onclick="selectSolution('ten')">
+                                Ship within days
+                            </button>
+                            <button class="tab_links" onclick="selectSolution('eleven')">
+                                Count smaller Numbers
+                            </button>
+                        </div>
+                        <div class="tab_content solutions one two three four five six seven">
+                            <h2 class="info_paragraph tab_description align_right">
+                                Python solutions can be found in the following tabs. Try attempting the problems before viewing the solutions
+                            </h2>
+                        </div>
+                        <div class="tab_content eight">
+                            <script src="https://gist.github.com/KurbyDoo/868bcabf7f2e05236e09932dc12e4734.js"></script>
+                        </div>
+            
+                        <div class="tab_content nine">
+                            <script src="https://gist.github.com/KurbyDoo/f5a7ed831d4f7f05dfeedb2c85e1a489.js"></script>
+                        </div>
+            
+                        <div class="tab_content ten">
+                            <script src="https://gist.github.com/KurbyDoo/56c0f2a157b840b80533020a09d8ef61.js"></script>
+                        </div>
+
+                        <div class="tab_content eleven">
+                            <script src="https://gist.github.com/KurbyDoo/d93fed19eeecf04e4b1cad802370991c.js"></script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+
+        </div>
+    </div>
+    <script src="../../js/alogrithms.js"></script>
+    <script src="../../js/load_nav.js"></script>
+</body>
+</html>
